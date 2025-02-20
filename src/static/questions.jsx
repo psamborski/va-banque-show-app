@@ -1,6 +1,9 @@
 export const rounds = {
     1: {
         prices: [100, 200, 300, 400, 500],
+        bonus: {
+            'Nauka': 3
+        },
         questions: {
             "Historia": ["Pytanie 1", "Pytanie 2", "Pytanie 3", "Pytanie 4", "Pytanie 5"],
             "Nauka": ["Pytanie 6", "Pytanie 7", "Pytanie 8", "Pytanie 9", "Pytanie 10"],
@@ -11,6 +14,10 @@ export const rounds = {
     },
     2: {
         prices: [200, 400, 600, 800, 1000],
+        bonus: {
+            'Sztuka': 1,
+            'Sport': 5
+        },
         questions: {
             "Historia": ["Pytanie 1", "Pytanie 2", "Pytanie 3", "Pytanie 4", "Pytanie 5"],
             "Nauka": ["Pytanie 6", "Pytanie 7", "Pytanie 8", "Pytanie 9", "Pytanie 10"],
