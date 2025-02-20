@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {AnimatePresence, motion} from "framer-motion";
 import {Link, useParams} from "react-router-dom";
 
@@ -19,6 +19,14 @@ const RoundView = () => {
 
     const questionBoxShowDelays = [0, 1, 2]
 
+    // make sure to clean up
+    useEffect(() => {
+        setSelectedQuestion(null);
+        setHiddenPrices(new Set());
+        setShowAllQuestions(false);
+        setBonusQuestionFlag(false);
+    }, [roundNum]);
+
     const handleSelect = (category, index) => {
         const price = prices[index];
         if (bonus?.[category] === index) {
@@ -37,7 +45,7 @@ const RoundView = () => {
         <Link to={roundNum === '1' ? '/round/2' : '/final'} className="button next-round-button">⮕</Link>
         <AnimatePresence>
             {!showAllQuestions && <motion.span
-                key={'dummy-round-view'}
+                key={`dummy-round-${roundNum}-view`}
                 className={'dummy-view'}
                 onClick={() => setShowAllQuestions(true)}
                 initial={{opacity: 1}}
@@ -51,7 +59,10 @@ const RoundView = () => {
             />
             }
             {showAllQuestions &&
-                <div className="round-view-container">
+                <div
+                    key={`round-${roundNum}-view`}
+                    className="round-view-container"
+                >
                     <div className="category-container">
                         {categories.map((category, idx) => (
                             <motion.div
