@@ -1,7 +1,10 @@
 import React, {useState} from "react";
 import {AnimatePresence, motion} from "framer-motion";
+import JingleSoundPlayer from "../../features/JingleSoundPlayer/JingleSoundPlayer.jsx";
+import MelodyPlayer from "../../features/MelodyPlayer/MelodyPlayer.jsx";
 
 import "./FinalView.css";
+
 import {final} from "../../static/questions.jsx";
 
 const FinalView = () => {
@@ -12,6 +15,11 @@ const FinalView = () => {
         className="final-view-container"
         onClick={() => setShowCategory(true)}
     >
+        {/*music players*/}
+        {showCategory && !showFinalQuestion && <JingleSoundPlayer/>}
+        {showCategory && showFinalQuestion && <MelodyPlayer/>}
+
+        {/*proper component*/}
         {showCategory && <AnimatePresence>
             <motion.div
                 initial={{scale: 0}}
