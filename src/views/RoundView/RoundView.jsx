@@ -1,20 +1,18 @@
 import React, {useState} from "react";
 import {motion} from "framer-motion";
+import {useParams} from "react-router-dom";
 
-const categories = ["Historia", "Nauka", "Sztuka", "Sport", "Geografia"];
-const prices = [200, 400, 600, 800, 1000];
+import "./RoundView.css";
+import {rounds} from "../../static/questions.jsx";
 
-const questions = {
-    "Historia": ["Pytanie 1", "Pytanie 2", "Pytanie 3", "Pytanie 4", "Pytanie 5"],
-    "Nauka": ["Pytanie 6", "Pytanie 7", "Pytanie 8", "Pytanie 9", "Pytanie 10"],
-    "Sztuka": ["Pytanie 11", "Pytanie 12", "Pytanie 13", "Pytanie 14", "Pytanie 15"],
-    "Sport": ["Pytanie 16", "Pytanie 17", "Pytanie 18", "Pytanie 19", "Pytanie 20"],
-    "Geografia": ["Pytanie 21", "Pytanie 22", "Pytanie 23", "Pytanie 24", "Pytanie 25"],
-};
-
-const App = () => {
+const RoundView = () => {
     const [selectedQuestion, setSelectedQuestion] = useState(null);
     const [hiddenPrices, setHiddenPrices] = useState(new Set());
+
+    const {roundNum} = useParams();
+    const questions = rounds[roundNum].questions;
+    const categories = Object.keys(rounds[roundNum].questions);
+    const prices = rounds[roundNum].prices
 
     const handleSelect = (category, index) => {
         const price = prices[index];
@@ -72,4 +70,4 @@ const App = () => {
     </div>);
 }
 
-export default App
+export default RoundView
