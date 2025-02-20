@@ -8,8 +8,7 @@ import {rounds} from "../../static/questions.jsx";
 const RoundView = () => {
     const [selectedQuestion, setSelectedQuestion] = useState(null);
     const [hiddenPrices, setHiddenPrices] = useState(new Set());
-    const [bonusQuestionFlag, setbonusQuestionFlag] = useState(false);
-    const [displayBonusView, setDisplayBonusView] = useState(false);
+    const [bonusQuestionFlag, setBonusQuestionFlag] = useState(false);
 
     const {roundNum} = useParams();
     const questions = rounds[roundNum].questions;
@@ -20,8 +19,7 @@ const RoundView = () => {
     const handleSelect = (category, index) => {
         const price = prices[index];
         if (bonus?.[category] === index) {
-            setbonusQuestionFlag(true);
-            setDisplayBonusView(true);
+            setBonusQuestionFlag(true);
         }
         setSelectedQuestion({category, id: `cat-${category}-q-${index}`, question: questions[category][index], price});
     };
@@ -29,8 +27,7 @@ const RoundView = () => {
     const handleClose = () => {
         setHiddenPrices((prev) => new Set(prev).add(`${selectedQuestion.category}-${selectedQuestion.price}`));
         setSelectedQuestion(null);
-        setbonusQuestionFlag(false);
-        setDisplayBonusView(false);
+        setBonusQuestionFlag(false);
     };
 
     return (<div className="main-container">
@@ -64,12 +61,12 @@ const RoundView = () => {
                 initial={{scale: 0}}
                 animate={{
                     scale: 1,
-                    rotateY: displayBonusView ? 180 : 0
+                    rotateY: bonusQuestionFlag ? 180 : 0
                 }}
                 transition={{
-                    duration: displayBonusView ? 0 : .8,
+                    duration: bonusQuestionFlag ? 0 : .8,
                     ease: "linear",
-                    delay: displayBonusView ? 1 : 0,
+                    delay: bonusQuestionFlag ? 1 : 0,
                 }}
                 exit={{
                     scale: 0,
@@ -84,14 +81,13 @@ const RoundView = () => {
                     &#10006;
                 </button>
             </motion.div>}
-            {selectedQuestion && displayBonusView && (
+            {selectedQuestion && bonusQuestionFlag && (
                 <motion.div
                     key={`${selectedQuestion.id}-b`}
                     initial={{scale: 0}}
                     animate={{
                         scale: 1,
-                        rotateX: bonusQuestionFlag ? 360 : 0,
-                        // rotateY: (bonusQuestionFlag && !displayBonusView) ? 180 : 0
+                        rotateX: 360,
                     }}
                     transition={{
                         duration: .8,
@@ -104,7 +100,7 @@ const RoundView = () => {
                         }
                     }}
                     className={`question-container bonus`}
-                    onClick={() => setDisplayBonusView(false)}
+                    onClick={() => setBonusQuestionFlag(false)}
                 >
                     <span>PREMIA</span>
                 </motion.div>
