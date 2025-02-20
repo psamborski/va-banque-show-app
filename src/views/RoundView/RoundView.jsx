@@ -1,15 +1,21 @@
 import React, {useEffect, useState} from "react";
+import ReactPlayer from "react-player";
 import {AnimatePresence, motion} from "framer-motion";
 import {Link, useParams} from "react-router-dom";
 
 import "./RoundView.css";
+
 import {rounds} from "../../static/questions.jsx";
+import categoryRevealSound from '../../assets/audio/category-reveal.mp3';
+import bonusSound from '../../assets/audio/bonus-sound.mp3';
+import jingielSound from '../../assets/audio/jingiel.mp3';
 
 const RoundView = () => {
     const [showAllQuestions, setShowAllQuestions] = useState(false);
     const [selectedQuestion, setSelectedQuestion] = useState(null);
     const [hiddenPrices, setHiddenPrices] = useState(new Set());
     const [bonusQuestionFlag, setBonusQuestionFlag] = useState(false);
+    const [jingielPlaying, setJingielPlaying] = useState(false);
 
     const {roundNum} = useParams();
     const questions = rounds[roundNum].questions;
@@ -25,6 +31,7 @@ const RoundView = () => {
         setHiddenPrices(new Set());
         setShowAllQuestions(false);
         setBonusQuestionFlag(false);
+        setJingielPlaying(false);
     }, [roundNum]);
 
     const handleSelect = (category, index) => {
@@ -42,7 +49,38 @@ const RoundView = () => {
     };
 
     return <>
+        {/*audio players*/}
+        <ReactPlayer
+            className="audio category-reveal-audio"
+            url={categoryRevealSound}
+            playing={showAllQuestions}
+            controls={false}
+
+        />
+        <ReactPlayer
+            className="audio bonus-audio"
+            url={bonusSound}
+            playing={bonusQuestionFlag}
+            controls={false}
+
+        />
+        <ReactPlayer
+            className="audio jingiel-audio"
+            url={jingielSound}
+            playing={jingielPlaying}
+            controls={false}
+            onEnded={() => setJingielPlaying(false)}
+        />
+
+        {/*next round button*/}
         <Link to={roundNum === '1' ? '/round/2' : '/final'} className="button next-round-button">⮕</Link>
+
+        {/*jingiel audio button*/}
+        <button onClick={() => setJingielPlaying(!jingielPlaying)} className="button jingiel-audio-button">
+            {jingielPlaying ? '⏸︎' : '►'}
+        </button>
+
+        {/*proper component*/}
         <AnimatePresence>
             {!showAllQuestions && <motion.span
                 key={`dummy-round-${roundNum}-view`}

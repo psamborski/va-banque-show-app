@@ -26,19 +26,23 @@ body {
     backface-visibility: hidden;
 }
 
+.audio {
+    display: none;
+}
+
 .button {
     color: #00274D;
     background-color: white;
     opacity: .05;
-    height: 1.2em;
-    width: 1.2em;
     border: none;
-    border-radius: 10px;
+    border-radius: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    font-size: calc(10px + 1vmin);
+    font-size: 15px;
+    width: 30px;
+    height: 30px;
     text-shadow: none;
 }
 
