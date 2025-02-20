@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import { motion } from "framer-motion";
+import React, {useState} from "react";
+import {motion} from "framer-motion";
 
 const categories = ["Historia", "Nauka", "Sztuka", "Sport", "Geografia"];
-const values = [200, 400, 600, 800, 1000];
+const prices = [200, 400, 600, 800, 1000];
 
 const questions = {
     "Historia": ["Pytanie 1", "Pytanie 2", "Pytanie 3", "Pytanie 4", "Pytanie 5"],
@@ -12,62 +12,66 @@ const questions = {
     "Geografia": ["Pytanie 21", "Pytanie 22", "Pytanie 23", "Pytanie 24", "Pytanie 25"],
 };
 
-export default function VaBanque() {
+const App = () => {
     const [selectedQuestion, setSelectedQuestion] = useState(null);
-    const [hiddenValues, setHiddenValues] = useState(new Set());
+    const [hiddenPrices, setHiddenPrices] = useState(new Set());
 
     const handleSelect = (category, index) => {
-        const value = values[index];
-        if (!hiddenValues.has(`${category}-${value}`)) {
-            setSelectedQuestion({ category, question: questions[category][index], value });
+        const price = prices[index];
+        if (!hiddenPrices.has(`${category}-${price}`)) {
+            setSelectedQuestion({category, question: questions[category][index], price});
         }
     };
 
     const handleClose = () => {
-        setHiddenValues((prev) => new Set(prev).add(`${selectedQuestion.category}-${selectedQuestion.value}`));
+        setHiddenPrices((prev) => new Set(prev).add(`${selectedQuestion.category}-${selectedQuestion.price}`));
         setSelectedQuestion(null);
     };
 
-    return (
-        <div className="p-4 text-center">
-            <div className="grid grid-cols-5 gap-2">
-                {categories.map((cat, idx) => (
-                    <div key={idx} className="p-2 font-bold bg-gray-800 text-white rounded">
-                        {cat}
+    return (<div className="main-container">
+        <div className="category-container">
+            {categories.map((category, idx) => (<div key={idx} className="category">
+                <span>{category}</span>
+            </div>))}
+        </div>
+        <div className="price-container">
+            {categories.map((cat, catId) => (
+                    <div
+                        key={`price-cat-${catId}-container`}
+                        className={`price-cat-container`}
+                    >
+                        {prices.map((price, idx) => (
+                            <div
+                                key={`${cat}-${price}`}
+                                className={`price-box ${hiddenPrices.has(`${cat}-${price}`) ? "used" : ""}`}
+                                onClick={() => handleSelect(cat, idx)}
+                            >
+                                {price}
+                            </div>
+                        ))}
                     </div>
-                ))}
-            </div>
-            <div className="grid grid-cols-5 gap-2 mt-2">
-                {categories.map((cat) =>
-                    values.map((val, idx) => (
-                        <button
-                            key={`${cat}-${val}`}
-                            className={`p-4 bg-blue-500 text-white font-bold rounded ${
-                                hiddenValues.has(`${cat}-${val}`) ? "opacity-20 cursor-not-allowed" : ""
-                            }`}
-                            onClick={() => handleSelect(cat, idx)}
-                            disabled={hiddenValues.has(`${cat}-${val}`)}
-                        >
-                            {val}
-                        </button>
-                    ))
-                )}
-            </div>
-            {selectedQuestion && (
-                <motion.div
-                    initial={{ scale: 0 }}
-                    animate={{ scale: 1 }}
-                    exit={{ scale: 0 }}
-                    className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-80 text-white"
-                >
-                    <div className="p-6 bg-gray-900 rounded-lg text-xl">
-                        <p>{selectedQuestion.question}</p>
-                        <button className="mt-4 bg-red-500 px-4 py-2 rounded" onClick={handleClose}>
-                            Zamknij
-                        </button>
-                    </div>
-                </motion.div>
+                )
             )}
         </div>
-    );
+        {selectedQuestion && (
+            <motion.div
+                initial={{scale: 0}}
+                animate={{
+                    scale: 1,
+                }}
+                transition={{
+                    duration: .8,
+                    ease: "linear",
+                }}
+                className="question-container"
+            >
+                <span>{selectedQuestion.question}</span>
+                <button className="close-btn" onClick={handleClose}>
+                    &#10006;
+                </button>
+            </motion.div>
+        )}
+    </div>);
 }
+
+export default App
