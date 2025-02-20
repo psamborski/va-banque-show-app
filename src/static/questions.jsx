@@ -27,3 +27,8 @@ export const rounds = {
         }
     }
 }
+
+export const final = {
+    category: 'Kategoria finałowa',
+    question: 'Pytanie finałowe'
+}

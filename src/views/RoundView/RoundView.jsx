@@ -30,7 +30,7 @@ const RoundView = () => {
         setBonusQuestionFlag(false);
     };
 
-    return (<div className="main-container">
+    return (<div className="round-view-container">
         <div className="category-container">
             {categories.map((category, idx) => (<div key={`cat-cont-${idx}`} className="category">
                 <span>{category}</span>
