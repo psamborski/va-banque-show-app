@@ -10,3 +10,24 @@ body {
     font-size: 3vmin;
     text-shadow: #05172a .1em .1em 0;
 }
+
+.button {
+    color: #00274D;
+    background-color: white;
+    opacity: .05;
+    height: 1.2em;
+    width: 1.2em;
+    border: none;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: calc(10px + 1vmin);
+    text-shadow: none;
+}
+
+.button:hover {
+    cursor: pointer;
+    opacity: .3;
+}

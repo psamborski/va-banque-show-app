@@ -9,6 +9,12 @@
   box-sizing: border-box;
 }
 
+.next-round-button {
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+}
+
 .category-container {
   width: 100%;
   height: 16%;
@@ -109,19 +115,4 @@
   position: absolute;
   right: 5px;
   top: 5px;
-  color: #00274D;
-  background-color: white;
-  opacity: .1;
-  height: 30px;
-  width: 30px;
-  border: none;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.close-btn:hover {
-  cursor: pointer;
-  opacity: .3;
 }

@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import {AnimatePresence, motion} from "framer-motion";
-import {useParams} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 
 import "./RoundView.css";
 import {rounds} from "../../static/questions.jsx";
@@ -31,6 +31,7 @@ const RoundView = () => {
     };
 
     return (<div className="round-view-container">
+        <Link to={roundNum === '1' ? '/round/2' : '/final'} className="button next-round-button">⮕</Link>
         <div className="category-container">
             {categories.map((category, idx) => (<div key={`cat-cont-${idx}`} className="category">
                 <span>{category}</span>
@@ -77,7 +78,7 @@ const RoundView = () => {
                 className={`question-container`}
             >
                 <span>{selectedQuestion.question}</span>
-                <button className="close-btn" onClick={handleClose}>
+                <button className="button close-btn" onClick={handleClose}>
                     &#10006;
                 </button>
             </motion.div>}
