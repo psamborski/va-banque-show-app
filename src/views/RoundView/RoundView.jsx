@@ -58,56 +58,58 @@ const RoundView = () => {
                 )
             )}
         </div>
-        {selectedQuestion && (
-            <>
+        <AnimatePresence>
+            {selectedQuestion && <motion.div
+                key={`${selectedQuestion.id}-q`}
+                initial={{scale: 0}}
+                animate={{
+                    scale: 1,
+                    rotateY: displayBonusView ? 180 : 0
+                }}
+                transition={{
+                    duration: displayBonusView ? 0 : .8,
+                    ease: "linear",
+                    delay: displayBonusView ? 1 : 0,
+                }}
+                exit={{
+                    scale: 0,
+                    transition: {
+                        duration: .2
+                    }
+                }}
+                className={`question-container`}
+            >
+                <span>{selectedQuestion.question}</span>
+                <button className="close-btn" onClick={handleClose}>
+                    &#10006;
+                </button>
+            </motion.div>}
+            {selectedQuestion && displayBonusView && (
                 <motion.div
-                    key={`${selectedQuestion.id}-q`}
+                    key={`${selectedQuestion.id}-b`}
                     initial={{scale: 0}}
                     animate={{
                         scale: 1,
-                        rotateY: displayBonusView ? 180 : 0
+                        rotateX: bonusQuestionFlag ? 360 : 0,
+                        // rotateY: (bonusQuestionFlag && !displayBonusView) ? 180 : 0
                     }}
                     transition={{
-                        duration: displayBonusView ? 0 : .8,
+                        duration: .8,
                         ease: "linear",
-                        delay: displayBonusView ? 1 : 0,
                     }}
-                    className={`question-container`}
+                    exit={{
+                        rotateY: -90,
+                        transition: {
+                            duration: .4,
+                        }
+                    }}
+                    className={`question-container bonus`}
+                    onClick={() => setDisplayBonusView(false)}
                 >
-                    <span>{selectedQuestion.question}</span>
-                    <button className="close-btn" onClick={handleClose}>
-                        &#10006;
-                    </button>
+                    <span>PREMIA</span>
                 </motion.div>
-                {<AnimatePresence>
-                    {bonusQuestionFlag && displayBonusView && (
-                        <motion.div
-                            key={`${selectedQuestion.id}-b`}
-                            initial={{scale: 0}}
-                            animate={{
-                                scale: 1,
-                                rotateX: bonusQuestionFlag ? 360 : 0,
-                                // rotateY: (bonusQuestionFlag && !displayBonusView) ? 180 : 0
-                            }}
-                            transition={{
-                                duration: .8,
-                                ease: "linear",
-                            }}
-                            exit={{
-                                rotateY: -90,
-                                transition: {
-                                    duration: .4,
-                                }
-                        }}
-                            className={`question-container bonus`}
-                            onClick={() => setDisplayBonusView(false)}
-                        >
-                            <span>PREMIA</span>
-                        </motion.div>
-                    )}
-                </AnimatePresence>}
-            </>
-        )}
+            )}
+        </AnimatePresence>
     </div>);
 }
 
