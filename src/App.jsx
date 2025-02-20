@@ -18,9 +18,7 @@ const App = () => {
 
     const handleSelect = (category, index) => {
         const price = prices[index];
-        if (!hiddenPrices.has(`${category}-${price}`)) {
-            setSelectedQuestion({category, question: questions[category][index], price});
-        }
+        setSelectedQuestion({category, question: questions[category][index], price});
     };
 
     const handleClose = () => {
@@ -30,7 +28,7 @@ const App = () => {
 
     return (<div className="main-container">
         <div className="category-container">
-            {categories.map((category, idx) => (<div key={idx} className="category">
+            {categories.map((category, idx) => (<div key={`cat-cont-${idx}`} className="category">
                 <span>{category}</span>
             </div>))}
         </div>

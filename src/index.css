@@ -1,10 +1,14 @@
 body {
-    font-family: Arial, sans-serif;
     background-color: #05172a;
     color: white;
     text-align: center;
     margin: 0;
     padding: 0;
+    font-family: 'ITC Korinna', sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 3vmin;
+    text-shadow: #05172a .1em .1em 0;
 }
 
 .main-container {
@@ -68,6 +72,17 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+
+    font-family: 'Swiss 911', serif;
+    color: #dcd21b;
+    text-shadow: #05172a 4px 4px 0;
+    font-size: 8vmin;
+    resize: both;
+}
+
+.price-box.used {
+    color: transparent;
+    text-shadow: none;
 }
 
 .price-box:hover {
