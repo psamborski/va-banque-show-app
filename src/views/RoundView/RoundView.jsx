@@ -55,7 +55,7 @@ const RoundView = () => {
         <JingleSoundPlayer/>
 
         {/* next round button */}
-        <Link to={roundNum === '1' ? '/round/2' : '/final'} className="button next-round-button">⮕</Link>
+        <Link to={roundNum === '1' ? '/game/round/2' : '/game/final'} className="round-button next-round-button">⮕</Link>
 
         {/* proper component */}
         <AnimatePresence>

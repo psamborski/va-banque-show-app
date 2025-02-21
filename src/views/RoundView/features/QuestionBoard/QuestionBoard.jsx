@@ -35,7 +35,7 @@ const QuestionBoard = (props) => {
             className={`question-container`}
         >
             <span>{selectedQuestion.text}</span>
-            <button className="button close-btn" onClick={handleQuestionClose}>
+            <button className="round-button close-btn" onClick={handleQuestionClose}>
                 &#10006;
             </button>
         </motion.div>}

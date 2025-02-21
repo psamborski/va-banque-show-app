@@ -1,0 +1,54 @@
+.
+├── README.md
+├── eslint.config.js
+├── index.html
+├── package-lock.json
+├── package.json
+├── src
+│   ├── assets
+│   │   ├── audio
+│   │   │   ├── bonus-sound.mp3
+│   │   │   ├── category-reveal.mp3
+│   │   │   ├── final-melody.mp3
+│   │   │   └── jingle.mp3
+│   │   ├── bonus-bg.jpg
+│   │   ├── bonus-bg@2x.jpg
+│   │   ├── main-view.jpg
+│   │   ├── va-banque-bg.jpg
+│   │   └── va-banque-bg@10x.jpg
+│   ├── components
+│   │   ├── BonusSoundPlayer
+│   │   │   └── BonusSoundPlayer.jsx
+│   │   ├── CategoryRevealSoundPlayer
+│   │   │   └── CategoryRevealSoundPlayer.jsx
+│   │   ├── JingleSoundPlayer
+│   │   │   ├── JingleSoundPlayer.css
+│   │   │   └── JingleSoundPlayer.jsx
+│   │   └── MelodyPlayer
+│   │       ├── MelodyPlayer.css
+│   │       └── MelodyPlayer.jsx
+│   ├── data
+│   │   └── questions.jsx
+│   ├── index.css
+│   ├── main.jsx
+│   └── views
+│       ├── FinalView
+│       │   ├── FinalView.css
+│       │   └── FinalView.jsx
+│       └── RoundView
+│           ├── RoundView.css
+│           ├── RoundView.jsx
+│           └── features
+│               ├── CategoryRow
+│               │   ├── CategoryRow.css
+│               │   └── CategoryRow.jsx
+│               ├── PrizesGrid
+│               │   ├── PrizesGrid.css
+│               │   └── PrizesGrid.jsx
+│               └── QuestionBoard
+│                   ├── QuestionBoard.css
+│                   └── QuestionBoard.jsx
+├── tree.txt
+└── vite.config.js
+
+17 directories, 35 files
