@@ -78,7 +78,7 @@ const PlayersView = () => {
         </div>
         {/* adding player */}
         <div className="add-player-btn-container"></div>
-        <button className="add-player-btn" onClick={addPlayer} disabled={players.length >= 4}>
+        <button className="add-player-btn" onClick={() => addPlayer()} disabled={players.length >= 4}>
             Dodaj gracza ({players.length}/4)
         </button>
     </div>)

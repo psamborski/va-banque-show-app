@@ -21,7 +21,7 @@ const MelodyPlayer = (props) => {
             playing={playing}
             controls={false}
         />
-        <button onClick={() => setPlaying(!playing)} className="round-button jingiel-audio-button">
+        <button onClick={() => setPlaying(!playing)} className="round-button jingle-audio-button">
             {playing ? '⏸︎' : '►'}
         </button>
     </>
