@@ -1,0 +1,16 @@
+.round-view-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-direction: column;
+  padding: 0 5px;
+  box-sizing: border-box;
+}
+
+.next-round-button {
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+}
