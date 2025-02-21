@@ -14,8 +14,8 @@ import AppContainer from "./components/AppContainer/AppContainer.jsx";
 createRoot(document.getElementById("root")).render(
     <StrictMode>
         <PlayersProvider>
-            <AppContainer>
-                <BrowserRouter>
+            <BrowserRouter>
+                <AppContainer>
                     <Routes>
                         <Route
                             path="/"
@@ -30,8 +30,8 @@ createRoot(document.getElementById("root")).render(
 
                         <Route path="/players" element={<PlayersView/>}/>
                     </Routes>
-                </BrowserRouter>
-            </AppContainer>
+                </AppContainer>
+            </BrowserRouter>
         </PlayersProvider>
     </StrictMode>
 );

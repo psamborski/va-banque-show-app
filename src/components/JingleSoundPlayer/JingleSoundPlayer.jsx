@@ -22,7 +22,7 @@ const JingleSoundPlayer = (props) => {
             controls={false}
         />
         <button onClick={() => setPlaying(!playing)} className="round-button jingle-audio-button">
-            {playing ? '⏸︎' : '►'}
+            {playing ? '⏸︎' : '♪'}
         </button>
     </>
 }
