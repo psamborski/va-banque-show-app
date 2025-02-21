@@ -1,9 +1,10 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import PropTypes from 'prop-types';
 import {motion} from "framer-motion";
 
 import './CategoryRow.css'
 import QuestionBoard from "../QuestionBoard/QuestionBoard.jsx";
+import {useParams} from "react-router-dom";
 
 const CategoryRow = (props) => {
     const [revealedCategories, setRevealedCategories] = useState(new Set());
@@ -12,9 +13,16 @@ const CategoryRow = (props) => {
     const { categories } = props
     const questionBoxShowDelays = [0, 1, 2]
 
+    const {roundNum} = useParams();
+
+    // make sure to clean up
+    useEffect(() => {
+        setClickedCategory(null);
+        setRevealedCategories(new Set());
+    }, [roundNum]);
+
     const handleCategoryClick = (categoryName, categoryIndex) => {
         setClickedCategory({id: `cat-${categoryName}-n-${categoryIndex}`, text: categoryName});
-
     }
 
     const handleCategoryClose = () => {
