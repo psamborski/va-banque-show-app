@@ -1,0 +1,6 @@
+.show-scoreboard-button {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 5px;
+}
