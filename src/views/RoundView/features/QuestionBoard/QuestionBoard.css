@@ -22,7 +22,7 @@
 }
 
 .question-container.bonus {
-    background-image: url('../../../../assets/bonus-bg.jpg');
+    background-image: url('../../../../assets/bonus-bg@2x.jpg');
     font-size: 30vmin;
     backface-visibility: visible;
     text-shadow: #05172a .03em .03em 0;

@@ -34,7 +34,7 @@ const QuestionBoard = (props) => {
             }}
             className={`question-container`}
         >
-            <span>{selectedQuestion.question}</span>
+            <span>{selectedQuestion.text}</span>
             <button className="button close-btn" onClick={handleQuestionClose}>
                 &#10006;
             </button>
@@ -68,9 +68,9 @@ const QuestionBoard = (props) => {
 
 QuestionBoard.propTypes = {
     selectedQuestion: PropTypes.object.isRequired,
-    bonusQuestionFlag: PropTypes.bool.isRequired,
+    bonusQuestionFlag: PropTypes.bool,
 
-    setBonusQuestionFlag: PropTypes.object.isRequired,
+    setBonusQuestionFlag: PropTypes.object,
     handleQuestionClose: PropTypes.object.isRequired
 };
 
