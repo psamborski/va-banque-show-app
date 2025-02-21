@@ -1,8 +1,27 @@
-# React + Vite
+# Va Banque / Jeopardy! Clone
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This application is a simple version of the popular game show **Va Banque**, known worldwide as **Jeopardy!**. The game allows for an interactive quiz-style gameplay where players select questions hidden under point values and then answer them.
 
-Currently, two official plugins are available:
+## Running the Application
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+To run the project locally, follow these steps:
+
+### 1. Clone the Repository
+```sh
+  git clone https://github.com/psamborski/va-banque-show-app.git
+  cd va-banque-show-app
+```
+
+### 2. Start the Application
+```sh
+  npm install  # Install dependencies (optional if already installed)
+  npm run dev  # Start the application in development mode
+```
+
+The application will launch on the default port **http://localhost:5173/** (or another available port if the default is occupied).
+
+## Technologies
+- **React** (powered by Vite)
+
+## Author
+Patryk Samborski
