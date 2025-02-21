@@ -1,0 +1,40 @@
+.prize-container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.prize-cat-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.prize-box {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+
+    background-image: url('../../../../assets/va-banque-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    font-family: 'Swiss 911', serif;
+    color: #dcd21b;
+    text-shadow: #05172a 4px 4px 0;
+    font-size: 8vmin;
+    resize: both;
+}
+
+.prize-box.used {
+    color: transparent;
+    text-shadow: none;
+}
+
+.prize-box:hover {
+    cursor: pointer;
+}

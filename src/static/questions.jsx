@@ -1,6 +1,6 @@
 export const rounds = {
     1: {
-        prices: [100, 200, 300, 400, 500],
+        prizes: [100, 200, 300, 400, 500],
         bonus: {
             'Nauka': 3
         },
@@ -13,7 +13,7 @@ export const rounds = {
         }
     },
     2: {
-        prices: [200, 400, 600, 800, 1000],
+        prizes: [200, 400, 600, 800, 1000],
         bonus: {
             'Sztuka': 1,
             'Sport': 5

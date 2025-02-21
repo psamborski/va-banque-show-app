@@ -1,0 +1,35 @@
+.question-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    box-sizing: border-box;
+
+    background-image: url('../../../../assets/va-banque-bg@10x.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    backface-visibility: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    overflow-x: hidden;
+    overflow-y: auto;
+    font-size: 8vmin;
+}
+
+.question-container.bonus {
+    background-image: url('../../../../assets/bonus-bg.jpg');
+    font-size: 30vmin;
+    backface-visibility: visible;
+    text-shadow: #05172a .03em .03em 0;
+}
+
+.close-btn {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+}

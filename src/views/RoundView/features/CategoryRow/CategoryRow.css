@@ -1,0 +1,25 @@
+.category-container {
+    width: 100%;
+    height: 16%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 0;
+    box-sizing: border-box;
+}
+
+.category {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    margin: 5px;
+    box-sizing: border-box;
+
+    background-image: url('../../../../assets/va-banque-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
