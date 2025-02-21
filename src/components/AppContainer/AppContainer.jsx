@@ -1,12 +1,13 @@
 import React, {useState} from "react"
 import PropTypes from 'prop-types'
-import ScoreboardView from "../../views/ScoreboardView/ScoreboardView.jsx";
+import {AnimatePresence} from "framer-motion"
+
+import ScoreboardView from "../../views/ScoreboardView/ScoreboardView.jsx"
 
 import "./AppContainer.css"
-import {AnimatePresence} from "framer-motion";
 
 const AppContainer = ({children}) => {
-    const [showScoreboard, setShowScoreboard] = useState(false);
+    const [showScoreboard, setShowScoreboard] = useState(false)
     return <div className="app-container">
         {children}
 

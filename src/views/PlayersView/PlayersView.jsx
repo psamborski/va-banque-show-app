@@ -1,13 +1,15 @@
 import React, {useState} from "react"
 import {usePlayers} from "../../context/PlayersContext"
+
 import "./PlayersView.css"
 
 const PlayersView = () => {
-    const {players, updateBalance, updateName, addPlayer, removePlayer} = usePlayers()
     const [editingPlayer, setEditingPlayer] = useState(null)
     const [newName, setNewName] = useState('')
     const [editingBalance, setEditingBalance] = useState(null)
     const [newBalance, setNewBalance] = useState('')
+
+    const {players, updateBalance, updateName, addPlayer, removePlayer} = usePlayers()
 
     const startEditingName = (player) => {
         setEditingPlayer(player.id)
@@ -27,7 +29,7 @@ const PlayersView = () => {
     const saveBalance = (id) => {
         const parsedBalance = parseInt(newBalance, 10)
         if (!isNaN(parsedBalance)) {
-            updateBalance(id, parsedBalance - players.find(p => p.id === id).balance)
+            updateBalance(id, parsedBalance)
         }
         setEditingBalance(null)
     }

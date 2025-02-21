@@ -12,7 +12,7 @@ export const PlayersProvider = ({ children }) => {
     const updateBalance = (id, amount) => {
         setPlayers(prevPlayers =>
             prevPlayers.map(player =>
-                player.id === id ? { ...player, balance: player.balance + amount } : player
+                player.id === id ? { ...player, balance: amount } : player
             )
         )
     }
