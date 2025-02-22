@@ -13,6 +13,7 @@ import "./RoundView.css";
 import {rounds} from "../../data/questions.jsx";
 import PrizesGrid from "./features/PrizesGrid/PrizesGrid.jsx";
 import QuestionBoard from "./features/QuestionBoard/QuestionBoard.jsx";
+import TimesUpSoundPlayer from "../../components/TimesUpSoundPlayer/TimesUpSoundPlayer.jsx";
 
 const RoundView = () => {
     const [showAllQuestions, setShowAllQuestions] = useState(false);
@@ -53,6 +54,7 @@ const RoundView = () => {
         <CategoryRevealSoundPlayer playing={showAllQuestions}/>
         <BonusSoundPlayer playing={bonusQuestionFlag}/>
         <JingleSoundPlayer/>
+        <TimesUpSoundPlayer/>
 
         {/* proper component */}
         <AnimatePresence>

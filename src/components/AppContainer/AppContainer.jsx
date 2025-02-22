@@ -35,8 +35,6 @@ const AppContainer = ({children}) => {
             {showScoreboard && <ScoreboardView hideScoreboard={() => setShowScoreboard(false)} />}
         </AnimatePresence>
 
-        <TimesUpSoundPlayer />
-
         {showScoreboardMini && <ScoreboardMini />}
 
         <div className={'app-btn-container'}>
