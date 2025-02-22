@@ -31,10 +31,10 @@ const AppContainer = ({children}) => {
 
         {/* scoreboards components */}
         <AnimatePresence>
-            {showScoreboard && <ScoreboardView/>}
+            {showScoreboard && <ScoreboardView hideScoreboard={() => setShowScoreboard(false)} />}
         </AnimatePresence>
 
-        {showScoreboardMini && <ScoreboardMini/>}
+        {showScoreboardMini && <ScoreboardMini />}
 
         <div className={'app-btn-container'}>
             <Link to="/" className={"round-button"}>⏮</Link>

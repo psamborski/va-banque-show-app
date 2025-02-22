@@ -1,16 +1,20 @@
-import React from "react";
-import {motion} from "framer-motion";
+import React from "react"
+import PropTypes from "prop-types"
+import {motion} from "framer-motion"
 
-import {usePlayers} from "../../context/PlayersContext";
+import {usePlayers} from "../../context/PlayersContext"
 
-import "./ScoreboardView.css";
+import "./ScoreboardView.css"
 
-const ScoreboardView = () => {
+const ScoreboardView = (props) => {
     const {players} = usePlayers();
+
+    const {hideScoreboard} = props
 
     return (
         <motion.div
             className="scoreboard-view"
+            onClick={() => hideScoreboard()}
             initial={{scale: 0}}
             animate={{
                 scale: 1,
@@ -34,6 +38,10 @@ const ScoreboardView = () => {
             ))}
         </motion.div>
     );
-};
+}
+
+ScoreboardView.propTypes = {
+    hideScoreboard: PropTypes.func
+}
 
 export default ScoreboardView
