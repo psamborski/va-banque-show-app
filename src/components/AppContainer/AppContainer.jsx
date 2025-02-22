@@ -37,18 +37,17 @@ const AppContainer = ({children}) => {
         {showScoreboardMini && <ScoreboardMini/>}
 
         <div className={'app-btn-container'}>
-            <Link to="/" className={"round-button"}>⌂</Link>
-            <Link to="/game/round/1" className={"round-button"}>►</Link>
-            <button
-                onClick={() => setShowScoreboard(!showScoreboard)}
-                className={"round-button"}>
-                Ξ
-            </button>
+            <Link to="/" className={"round-button"}>⏮</Link>
             <button
                 onClick={() => setShowScoreboardMini(!showScoreboardMini)}
                 className={"round-button"}
             >
                 $
+            </button>
+            <button
+                onClick={() => setShowScoreboard(!showScoreboard)}
+                className={"round-button"}>
+                Ξ
             </button>
 
             <Link to={getNextPage()} className="round-button next-round-button">⮕</Link>
