@@ -5,6 +5,7 @@
     width: 100vw;
     height: 100vh;
     box-sizing: border-box;
+    padding: 10vmin;
 
     background-image: url('../../../../assets/va-banque-bg@10x.jpg');
     background-size: cover;

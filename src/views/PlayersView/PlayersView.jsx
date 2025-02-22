@@ -61,6 +61,7 @@ const PlayersView = () => {
                         editingBalance === player.id
                             ? <input
                                 type="number"
+                                step={100}
                                 value={newBalance}
                                 onChange={(e) => setNewBalance(e.target.value)}
                                 onBlur={() => saveBalance(player.id)}
