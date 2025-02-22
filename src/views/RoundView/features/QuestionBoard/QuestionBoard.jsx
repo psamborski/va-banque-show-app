@@ -16,6 +16,7 @@ const QuestionBoard = (props) => {
     return <AnimatePresence>
         {selectedQuestion && <motion.div
             key={`${selectedQuestion.id}-q`}
+            onClick={handleQuestionClose}
             initial={{scale: 0}}
             animate={{
                 scale: 1,
@@ -34,10 +35,7 @@ const QuestionBoard = (props) => {
             }}
             className={`question-container`}
         >
-            <span>{selectedQuestion.question}</span>
-            <button className="button close-btn" onClick={handleQuestionClose}>
-                &#10006;
-            </button>
+            <span>{selectedQuestion.text}</span>
         </motion.div>}
         {bonusQuestionFlag && (
             <motion.div
@@ -68,9 +66,9 @@ const QuestionBoard = (props) => {
 
 QuestionBoard.propTypes = {
     selectedQuestion: PropTypes.object.isRequired,
-    bonusQuestionFlag: PropTypes.bool.isRequired,
+    bonusQuestionFlag: PropTypes.bool,
 
-    setBonusQuestionFlag: PropTypes.object.isRequired,
+    setBonusQuestionFlag: PropTypes.object,
     handleQuestionClose: PropTypes.object.isRequired
 };
 

@@ -2,11 +2,11 @@ import React, {useEffect, useState} from "react";
 import PropTypes from 'prop-types';
 import ReactPlayer from "react-player";
 
-import "./MelodyPlayer.css";
+import "./JingleSoundPlayer.css";
 
-import jingleSound from '../../assets/audio/final-melody.mp3';
+import jingleSound from '../../assets/audio/jingle.mp3';
 
-const MelodyPlayer = (props) => {
+const JingleSoundPlayer = (props) => {
     const [playing, setPlaying] = useState(false);
 
     useEffect(() => {
@@ -21,14 +21,14 @@ const MelodyPlayer = (props) => {
             playing={playing}
             controls={false}
         />
-        <button onClick={() => setPlaying(!playing)} className="button jingiel-audio-button">
-            {playing ? '⏸︎' : '►'}
+        <button onClick={() => setPlaying(!playing)} className="round-button jingle-audio-button">
+            {playing ? '⏸︎' : '♪'}
         </button>
     </>
 }
 
-MelodyPlayer.propTypes = {
+JingleSoundPlayer.propTypes = {
     playing: PropTypes.any
 };
 
-export default MelodyPlayer
+export default JingleSoundPlayer

@@ -1,11 +1,11 @@
 import React, {useState} from "react";
 import {AnimatePresence, motion} from "framer-motion";
-import JingleSoundPlayer from "../../features/JingleSoundPlayer/JingleSoundPlayer.jsx";
-import MelodyPlayer from "../../features/MelodyPlayer/MelodyPlayer.jsx";
+import JingleSoundPlayer from "../../components/JingleSoundPlayer/JingleSoundPlayer.jsx";
+import MelodyPlayer from "../../components/MelodyPlayer/MelodyPlayer.jsx";
 
 import "./FinalView.css";
 
-import {final} from "../../static/questions.jsx";
+import {final} from "../../data/questions.jsx";
 
 const FinalView = () => {
     const [showCategory, setShowCategory] = useState(false);

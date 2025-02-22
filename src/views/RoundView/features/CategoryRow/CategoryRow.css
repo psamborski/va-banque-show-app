@@ -18,8 +18,21 @@
     margin: 5px;
     box-sizing: border-box;
 
-    background-image: url('../../../../assets/va-banque-bg.jpg');
+    background-image: url('../../../../assets/bonus-bg.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+
+    color: transparent;
+    text-shadow: none;
+}
+
+.category:hover {
+    cursor: pointer;
+}
+
+.category.revealed {
+    background-image: url('../../../../assets/va-banque-bg.jpg');
+    box-shadow: inherit;
+    color: inherit;
 }

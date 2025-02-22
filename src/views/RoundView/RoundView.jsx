@@ -2,15 +2,15 @@ import React, {useEffect, useState} from "react";
 import {AnimatePresence, motion} from "framer-motion";
 import {Link, useParams} from "react-router-dom";
 
-import BonusSoundPlayer from "../../features/BonusSoundPlayer/BonusSoundPlayer.jsx";
-import CategoryRevealSoundPlayer from "../../features/CategoryRevealSoundPlayer/CategoryRevealSoundPlayer.jsx";
-import JingleSoundPlayer from "../../features/JingleSoundPlayer/JingleSoundPlayer.jsx";
+import BonusSoundPlayer from "../../components/BonusSoundPlayer/BonusSoundPlayer.jsx";
+import CategoryRevealSoundPlayer from "../../components/CategoryRevealSoundPlayer/CategoryRevealSoundPlayer.jsx";
+import JingleSoundPlayer from "../../components/JingleSoundPlayer/JingleSoundPlayer.jsx";
 
 import CategoryRow from "./features/CategoryRow/CategoryRow.jsx";
 
 import "./RoundView.css";
 
-import {rounds} from "../../static/questions.jsx";
+import {rounds} from "../../data/questions.jsx";
 import PrizesGrid from "./features/PrizesGrid/PrizesGrid.jsx";
 import QuestionBoard from "./features/QuestionBoard/QuestionBoard.jsx";
 
@@ -39,7 +39,7 @@ const RoundView = () => {
         if (bonus?.[category] === index) {
             setBonusQuestionFlag(true);
         }
-        setSelectedQuestion({category, id: `cat-${category}-q-${index}`, question: questions[category][index], prize});
+        setSelectedQuestion({category, id: `cat-${category}-q-${index}`, text: questions[category][index], prize});
     };
 
     const handleQuestionClose = () => {
@@ -53,9 +53,6 @@ const RoundView = () => {
         <CategoryRevealSoundPlayer playing={showAllQuestions}/>
         <BonusSoundPlayer playing={bonusQuestionFlag}/>
         <JingleSoundPlayer/>
-
-        {/* next round button */}
-        <Link to={roundNum === '1' ? '/round/2' : '/final'} className="button next-round-button">⮕</Link>
 
         {/* proper component */}
         <AnimatePresence>

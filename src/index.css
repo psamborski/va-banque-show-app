@@ -30,24 +30,35 @@ body {
     display: none;
 }
 
-.button {
+button {
+    padding: 8px 12px;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    font-family: 'ITC Korinna', sans-serif;
+    text-transform: uppercase;
+    text-shadow: #05172a .07em .07em 0;
+}
+
+.round-button {
     color: #00274D;
     background-color: white;
-    opacity: .05;
+    opacity: .1;
     border: none;
-    border-radius: 15px;
+    border-radius: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    font-size: 15px;
-    width: 30px;
-    height: 30px;
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
     text-shadow: none;
     z-index: 999;
 }
 
-.button:hover {
+.round-button:hover {
     cursor: pointer;
-    opacity: .3;
+    opacity: .7;
 }
