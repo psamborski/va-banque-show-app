@@ -16,3 +16,8 @@
 .app-btn-container:hover {
     opacity: 1;
 }
+
+.next-round-button {
+    position: absolute;
+    right: 5px;
+}

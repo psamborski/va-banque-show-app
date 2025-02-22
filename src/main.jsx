@@ -19,11 +19,7 @@ createRoot(document.getElementById("root")).render(
                     <Routes>
                         <Route
                             path="/"
-                            element={
-                                <span className="dummy-view">
-                                    <Link to="/game/round/1" className="round-button next-round-button">⮕</Link>
-                                </span>
-                            }
+                            element={<span className="dummy-view" />}
                         />
                         <Route path="/game/round/:roundNum" element={<RoundView/>}/>
                         <Route path="/game/final" element={<FinalView/>}/>

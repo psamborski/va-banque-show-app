@@ -1,6 +1,6 @@
 import React, {useState} from "react"
 import PropTypes from 'prop-types'
-import {Link} from "react-router-dom"
+import {Link, useLocation} from "react-router-dom"
 import {AnimatePresence} from "framer-motion"
 
 import ScoreboardView from "../../views/ScoreboardView/ScoreboardView.jsx"
@@ -11,6 +11,21 @@ import "./AppContainer.css"
 const AppContainer = ({children}) => {
     const [showScoreboard, setShowScoreboard] = useState(false)
     const [showScoreboardMini, setShowScoreboardMini] = useState(false)
+
+    const {pathname} = useLocation()
+
+    const breadcrumbs = ['/', '/players', '/game/round/1', '/game/round/2', '/game/final']
+
+    const getNextPage = () => {
+        const curIdx = breadcrumbs.indexOf(pathname)
+
+        if (curIdx === -1) {
+            return breadcrumbs[0]
+        }
+
+        return breadcrumbs[(curIdx + 1) % breadcrumbs.length]
+    }
+
     return <div className="app-container">
         {children}
 
@@ -35,6 +50,8 @@ const AppContainer = ({children}) => {
             >
                 $
             </button>
+
+            <Link to={getNextPage()} className="round-button next-round-button">⮕</Link>
         </div>
     </div>
 }
