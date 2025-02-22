@@ -25,6 +25,7 @@ const TimesUpSoundPlayer = () => {
             url={timesUpSound}
             playing={playing}
             controls={false}
+            onEnded={() => setPlaying(false)}
         />
     )
 }
