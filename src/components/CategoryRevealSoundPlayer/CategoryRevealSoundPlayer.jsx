@@ -18,6 +18,7 @@ const CategoryRevealSoundPlayer = (props) => {
         url={categoryRevealSoundPlayer}
         playing={playing}
         controls={false}
+        onEnded={() => setPlaying(false)}
     />
 }
 

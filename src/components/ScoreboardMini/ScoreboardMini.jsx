@@ -35,6 +35,7 @@ const ScoreboardMini = () => {
                         <div className="scoreboard-mini-balance-container">
                             <input
                                 type="number"
+                                step={100}
                                 value={selectedPlayerId === player.id ? moneyChange : ''}
                                 onFocus={() => setSelectedPlayerId(player.id)}
                                 onChange={(e) => setMoneyChange(e.target.value)}

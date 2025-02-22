@@ -14,11 +14,11 @@ const BonusSoundPlayer = (props) => {
 
 
     return <ReactPlayer
-            className="audio bonus-audio"
-            url={bonusSound}
-            playing={playing}
-            controls={false}
-        />
+        className="audio bonus-audio"
+        url={bonusSound}
+        playing={playing}
+        controls={false}
+    />
 }
 
 BonusSoundPlayer.propTypes = {
