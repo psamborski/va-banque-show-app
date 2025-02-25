@@ -57,6 +57,7 @@ const ScoreboardMini = () => {
                 -
               </button>
             </div>
+            <span />
           </div>
         ),
         )

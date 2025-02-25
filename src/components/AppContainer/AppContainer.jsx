@@ -7,7 +7,7 @@ import ScoreboardView from '../../views/ScoreboardView/ScoreboardView.jsx'
 import ScoreboardMini from '../ScoreboardMini/ScoreboardMini.jsx'
 
 import './AppContainer.css'
-import TimesUpSoundPlayer from '../TimesUpSoundPlayer/TimesUpSoundPlayer.jsx'
+
 
 const AppContainer = ({ children }) => {
   const [showScoreboard, setShowScoreboard] = useState(false)
