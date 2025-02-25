@@ -1,4 +1,4 @@
-.final-view-container {
+.final-view {
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -15,7 +15,7 @@
   backface-visibility: hidden;
 }
 
-.question-container {
+.final-view__question-container {
   position: absolute;
   top: 0;
   left: 0;
@@ -39,11 +39,11 @@
   font-size: 8vmin;
 }
 
-.final-question-category {
+.final-view__question-category {
 
 }
 
-.final-question-category.small {
+.final-view__question-category--small {
   opacity: .7;
   font-size: 50%;
   margin-bottom: .6em;
