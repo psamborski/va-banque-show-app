@@ -1,3 +1,4 @@
+/* Global Styles */
 body {
     background-color: #05172a;
     color: white;
@@ -12,6 +13,7 @@ body {
     letter-spacing: 3px;
 }
 
+/* Dummy View Block */
 .dummy-view {
     width: 100%;
     height: 100%;
@@ -19,7 +21,6 @@ body {
     top: 0;
     left: 0;
     z-index: -1;
-
     background-image: url('assets/main-view.jpg');
     background-size: cover;
     background-position: center;
@@ -27,11 +28,13 @@ body {
     backface-visibility: hidden;
 }
 
+/* Audio Block */
 .audio {
     display: none;
 }
 
-button {
+/* Button Block */
+.button {
     padding: 8px 12px;
     font-size: 14px;
     cursor: pointer;
@@ -42,7 +45,8 @@ button {
     text-shadow: #05172a .07em .07em 0;
 }
 
-.round-button {
+/* Round Button Block */
+.button--round {
     color: #00274D;
     background-color: white;
     opacity: .19;
@@ -59,7 +63,7 @@ button {
     z-index: 999;
 }
 
-.round-button:hover {
+.button--round:hover {
     cursor: pointer;
     opacity: .7;
 }

@@ -1,4 +1,4 @@
-.question-container {
+.question-board__container {
     position: absolute;
     top: 0;
     left: 0;
@@ -7,7 +7,7 @@
     box-sizing: border-box;
     padding: 10vmin;
 
-    background-image: url('../../../../assets/va-banque-bg@10x.jpg');
+    background-image: url("../../../../assets/va-banque-bg@10x.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -22,15 +22,17 @@
     font-size: 8vmin;
 }
 
-.question-container.bonus {
-    background-image: url('../../../../assets/bonus-bg@2x.jpg');
-    font-size: 30vmin;
-    backface-visibility: visible;
-    text-shadow: #05172a .03em .03em 0;
+.question-board__text {
+    text-align: center;
 }
 
-.close-btn {
-    position: absolute;
-    right: 5px;
-    top: 5px;
+.question-board__container--bonus {
+    background-image: url("../../../../assets/bonus-bg@2x.jpg");
+    font-size: 30vmin;
+    backface-visibility: visible;
+    text-shadow: #05172a 0.03em 0.03em 0;
+}
+
+.question-board__bonus-text {
+    text-align: center;
 }

@@ -1,4 +1,4 @@
-.app-btn-container {
+.app__button-container {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -13,11 +13,44 @@
     opacity: 0;
 }
 
-.app-btn-container:hover {
+.app__button-container:hover {
     opacity: 1;
 }
 
-.next-round-button {
+.app__button {
+    padding: 8px 12px;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    font-family: 'ITC Korinna', sans-serif;
+    text-transform: uppercase;
+    text-shadow: #05172a .07em .07em 0;
+    box-sizing: border-box;
+}
+
+.app__button--round {
+    color: #00274D;
+    background-color: white;
+    opacity: .19;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    text-shadow: none;
+    z-index: 999;
+}
+
+.app__button--round:hover {
+    cursor: pointer;
+    opacity: .7;
+}
+
+.app__button--next {
     position: absolute;
     right: 5px;
 }

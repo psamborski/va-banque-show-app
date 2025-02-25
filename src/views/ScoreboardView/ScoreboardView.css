@@ -20,12 +20,12 @@
     backface-visibility: hidden;
 }
 
-.player-card {
+.scoreboard-view__player {
     padding: 20px;
     border-radius: 10px;
     text-align: center;
 }
 
-.scoreboard-balance {
+.scoreboard-view__balance {
     font-size: 1.5em;
 }

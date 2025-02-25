@@ -9,51 +9,65 @@
     margin: 0 auto;
 }
 
-.players-container {
+.players-view__players-container {
     flex: 1;
     overflow: auto;
 }
 
-.player-box {
+.players-view__player-box {
     margin: 1rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #00274D;
-    padding: .7rem 1em;
+    background-color: #00274d;
+    padding: 0.7rem 1em;
     gap: 2rem;
 }
 
-.player-name-container {
+.players-view__name-container {
     flex: 1;
     text-align: left;
 }
 
-.player-name, .player-balance {
+.players-view__name-display,
+.players-view__balance-display {
     font-size: 30px;
     cursor: pointer;
     padding: 5px;
     border-bottom: 1px dashed gray;
 }
 
-.player-name:hover, .player-balance:hover {
+.players-view__name-display:hover,
+.players-view__balance-display:hover {
     color: #007bff;
 }
 
-input {
+.players-view__name-input,
+.players-view__balance-input {
     font-size: 16px;
     padding: 5px;
     width: 100px;
     text-align: center;
 }
 
-.remove-button {
-    background-color: #ff4d4d;
+.players-view__button {
     color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 4px;
 }
 
-.add-player-btn {
-    background-color: #4CAF50;
-    color: white;
+.players-view__button--remove {
+    background-color: #ff4d4d;
+}
+
+.players-view__button--add {
+    background-color: #4caf50;
     margin: 30px 0;
+}
+
+.players-view__add-section {
+    text-align: center;
 }
