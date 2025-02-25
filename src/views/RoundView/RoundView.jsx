@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
-import { Link, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 
 import BonusSoundPlayer from '../../components/BonusSoundPlayer/BonusSoundPlayer.jsx'
 import CategoryRevealSoundPlayer from '../../components/CategoryRevealSoundPlayer/CategoryRevealSoundPlayer.jsx'

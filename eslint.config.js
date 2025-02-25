@@ -44,6 +44,10 @@ export default [
         { allowConstantExport: true }, // Allow constant exports
       ],
 
+      // react import
+      'react/jsx-uses-react': 'error',
+      'react/react-in-jsx-scope': 'error',
+
       // Code formatting and style
       'indent': ['error', 2], // Indentation: 2 spaces
       'quotes': ['error', 'single'], // Use single quotes
